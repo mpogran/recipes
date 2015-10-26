@@ -1483,3 +1483,752 @@
   [1m[36mContainer Load (0.3ms)[0m  [1mSELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 85], ["itemable_type", "Container"]]
   [1m[35mRecipe Exists (0.4ms)[0m  SELECT  1 AS one FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" INNER JOIN "containers" ON "container_items"."container_id" = "containers"."id" WHERE "containers"."user_id" = $1 AND "container_items"."itemable_type" = $2 AND "recipes"."id" = $3 LIMIT 1  [["user_id", 33], ["itemable_type", "Recipe"], ["id", 13]]
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$a.YbjZbYvQavIiltkPQqyO93VWfumbKetFKw9Z8tlde00U3fGiYIy"], ["created_at", "2015-10-25 22:51:00.835904"], ["updated_at", "2015-10-25 22:51:00.835904"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$cmv7UqNANZSRapnuaUUZ2e9j.kMYtQbxkmf3HOTgfNf/tllxVCZjy"], ["created_at", "2015-10-25 22:51:00.856079"], ["updated_at", "2015-10-25 22:51:00.856079"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$37cfcgbVeICgtTzsQJwcsu2pCx.2UzVXrLjhPB6e7pg1rDxXKM/bq"], ["created_at", "2015-10-25 22:51:00.863290"], ["updated_at", "2015-10-25 22:51:00.863290"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 36], ["created_at", "2015-10-25 22:51:00.870783"], ["updated_at", "2015-10-25 22:51:00.870783"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 22:51:00.874179"], ["updated_at", "2015-10-25 22:51:00.874179"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 86], ["created_at", "2015-10-25 22:51:00.896704"], ["updated_at", "2015-10-25 22:51:00.896704"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 86], ["itemable_type", "Container"], ["id", 87]]
+  [1m[35mContainer Load (0.5ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 86], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 86], ["itemable_type", "Recipe"]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "test@example.com"], ["password_digest", "$2a$04$wD.ZkWElhk5Wv2o62j8viud/5SQbX1PTfndpt7lRoFvgewDUydahC"], ["created_at", "2015-10-25 22:51:00.917229"], ["updated_at", "2015-10-25 22:51:00.917229"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 37]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 37], ["created_at", "2015-10-25 22:51:00.920055"], ["updated_at", "2015-10-25 22:51:00.920055"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$r.KFLUbhimtk7jrspSNT2eo/KmLN9JRw3oxBoPCKUE7aBrgw9JHza"], ["created_at", "2015-10-25 22:51:00.970746"], ["updated_at", "2015-10-25 22:51:00.970746"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 38]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 38], ["created_at", "2015-10-25 22:51:00.974644"], ["updated_at", "2015-10-25 22:51:00.974644"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 89], ["created_at", "2015-10-25 22:51:00.977963"], ["updated_at", "2015-10-25 22:51:00.977963"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$WPKGiFTEOs4hWBsvTroLPOfo3oudnl2YBsVsTCdYN2e6RpjjSxMAK"], ["created_at", "2015-10-25 22:53:31.064005"], ["updated_at", "2015-10-25 22:53:31.064005"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 39], ["created_at", "2015-10-25 22:53:31.078241"], ["updated_at", "2015-10-25 22:53:31.078241"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 90]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$zmFD3Ub3u3oYI6U8KEq5WOEWAk8U91X6kN4hjTGbIm8/SSSH0a17i"], ["created_at", "2015-10-25 22:56:02.582968"], ["updated_at", "2015-10-25 22:56:02.582968"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 40]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 40], ["created_at", "2015-10-25 22:56:02.598090"], ["updated_at", "2015-10-25 22:56:02.598090"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$8Djw5vS5qWa04A37vCH3NeQt2E4E3YFDj5U1g0et/HXp/ZeWNtqLC"], ["created_at", "2015-10-25 22:56:27.591453"], ["updated_at", "2015-10-25 22:56:27.591453"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 41]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 41], ["created_at", "2015-10-25 22:56:27.605607"], ["updated_at", "2015-10-25 22:56:27.605607"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 92]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["password_digest", "$2a$04$QW1XzFKxrZt8NzWEEYflxuCwR/lGJtYLHVSsCAlQQcUqi7CgvzsMW"], ["created_at", "2015-10-25 22:57:32.646644"], ["updated_at", "2015-10-25 22:57:32.646644"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 42], ["created_at", "2015-10-25 22:57:32.661846"], ["updated_at", "2015-10-25 22:57:32.661846"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$yhnaC01WzteTgopcocJa7OV7tCXFb1/lOyG4wDLkZUXczm0qBQTcu"], ["created_at", "2015-10-25 22:58:24.280744"], ["updated_at", "2015-10-25 22:58:24.280744"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 43]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 43], ["created_at", "2015-10-25 22:58:24.292764"], ["updated_at", "2015-10-25 22:58:24.292764"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 94]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user2@example.com"], ["password_digest", "$2a$04$1oBaGbnqjF3OFNmJ.G0/aOfRMsaKRnQFs8KEtwEtFFGXDV.Sm14QO"], ["created_at", "2015-10-25 22:58:24.306231"], ["updated_at", "2015-10-25 22:58:24.306231"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$Mj4uLIgQwWAbIO0/AXKkRuyCzWlsdI.0.S57IIrJXgc7NY5sbv8pu"], ["created_at", "2015-10-25 23:02:07.636754"], ["updated_at", "2015-10-25 23:02:07.636754"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 45], ["created_at", "2015-10-25 23:02:07.649231"], ["updated_at", "2015-10-25 23:02:07.649231"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user2@example.com"], ["password_digest", "$2a$04$iZos0Dx5FPTxEvtnQN7Uu.AT54fqxyikM4yGpLZNaKDqGuLXMUwVy"], ["created_at", "2015-10-25 23:02:07.663169"], ["updated_at", "2015-10-25 23:02:07.663169"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$KIQ2d.WLHQfd0ApHgDn/XeCqFMDqXVzg3jICk3VOekmQKaefg/Xyq"], ["created_at", "2015-10-25 23:10:31.264157"], ["updated_at", "2015-10-25 23:10:31.264157"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 47], ["created_at", "2015-10-25 23:10:31.276851"], ["updated_at", "2015-10-25 23:10:31.276851"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$cla005FYcV03.AdJgCJLQO6Iwma1oMn18G289f8B7V.0FPCW/zNg2"], ["created_at", "2015-10-25 23:11:10.206317"], ["updated_at", "2015-10-25 23:11:10.206317"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 48], ["created_at", "2015-10-25 23:11:10.218973"], ["updated_at", "2015-10-25 23:11:10.218973"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$p1nGulvmZAItkjv2KmAM6edyIQo3HOFdSgiYx9rIjVDNXAOWyT4Q2"], ["created_at", "2015-10-25 23:12:31.602569"], ["updated_at", "2015-10-25 23:12:31.602569"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 49], ["created_at", "2015-10-25 23:12:31.617766"], ["updated_at", "2015-10-25 23:12:31.617766"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 98]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:12:31.621064"], ["updated_at", "2015-10-25 23:12:31.621064"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 98], ["created_at", "2015-10-25 23:12:31.643420"], ["updated_at", "2015-10-25 23:12:31.643420"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 98], ["itemable_type", "Container"], ["id", 99]]
+  [1m[35mContainer Load (0.3ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 98], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 98], ["itemable_type", "Recipe"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user2@example.com"], ["password_digest", "$2a$04$qJn5VMckraFAi26F2Eh4Du1lYI2okwSv0cVcUeNGjvpEGTJPWYsZe"], ["created_at", "2015-10-25 23:12:31.658360"], ["updated_at", "2015-10-25 23:12:31.658360"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 50], ["created_at", "2015-10-25 23:12:31.660739"], ["updated_at", "2015-10-25 23:12:31.660739"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$c590gYizY4L67b0FRt.fNOxSaIP1lZJ9j0VEFBepyAlcgryB1qkFi"], ["created_at", "2015-10-25 23:12:31.671788"], ["updated_at", "2015-10-25 23:12:31.671788"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 51]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 51], ["created_at", "2015-10-25 23:12:31.674099"], ["updated_at", "2015-10-25 23:12:31.674099"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 101], ["created_at", "2015-10-25 23:12:31.677003"], ["updated_at", "2015-10-25 23:12:31.677003"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$m02PSxys3zPJTMi0xORRnOkaQN.u1NxeGZ/i9MNmEBOuWGwEE5Vza"], ["created_at", "2015-10-25 23:13:02.824861"], ["updated_at", "2015-10-25 23:13:02.824861"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 52]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 52], ["created_at", "2015-10-25 23:13:02.837357"], ["updated_at", "2015-10-25 23:13:02.837357"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 102]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:13:02.840311"], ["updated_at", "2015-10-25 23:13:02.840311"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 102], ["created_at", "2015-10-25 23:13:02.862846"], ["updated_at", "2015-10-25 23:13:02.862846"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 102], ["itemable_type", "Container"], ["id", 103]]
+  [1m[35mContainer Load (0.3ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 102], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 102], ["itemable_type", "Recipe"]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user2@example.com"], ["password_digest", "$2a$04$AV2Z11v05d9OccybvD0ni.oIJaZFvRXgd23dCxSuArvZ2EYEyKQrq"], ["created_at", "2015-10-25 23:13:02.878814"], ["updated_at", "2015-10-25 23:13:02.878814"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 53]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 53], ["created_at", "2015-10-25 23:13:02.882406"], ["updated_at", "2015-10-25 23:13:02.882406"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$lAmc2x5qRvnv1PBd.sIL2.SJiNDScwoWf7EQ215A3UExX9/u50/FC"], ["created_at", "2015-10-25 23:13:02.893871"], ["updated_at", "2015-10-25 23:13:02.893871"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 54]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 54], ["created_at", "2015-10-25 23:13:02.895971"], ["updated_at", "2015-10-25 23:13:02.895971"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 105], ["created_at", "2015-10-25 23:13:02.899239"], ["updated_at", "2015-10-25 23:13:02.899239"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$7JUiXSM0YsNCuIYYHTK08eXdQkkmdiWLQcIb5JnureMFxPJUKfM0C"], ["created_at", "2015-10-25 23:13:53.444333"], ["updated_at", "2015-10-25 23:13:53.444333"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 55], ["created_at", "2015-10-25 23:13:53.460040"], ["updated_at", "2015-10-25 23:13:53.460040"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 106]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:13:53.464507"], ["updated_at", "2015-10-25 23:13:53.464507"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 106], ["created_at", "2015-10-25 23:13:53.483549"], ["updated_at", "2015-10-25 23:13:53.483549"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 106], ["itemable_type", "Container"], ["id", 107]]
+  [1m[35mContainer Load (0.3ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 106], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 106], ["itemable_type", "Recipe"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user2@example.com"], ["password_digest", "$2a$04$m5C8ldp/IbAtmyh8vgV/oetpq3Capkj9rTEvUsOr656jm.mkQQ80u"], ["created_at", "2015-10-25 23:13:53.499377"], ["updated_at", "2015-10-25 23:13:53.499377"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 56]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 56], ["created_at", "2015-10-25 23:13:53.502744"], ["updated_at", "2015-10-25 23:13:53.502744"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$b2n.tJ4zSDHYwTakzJ9ae.0J/0.lQU6Bt1YnLwVIcvNFseSnA/CaC"], ["created_at", "2015-10-25 23:13:53.515112"], ["updated_at", "2015-10-25 23:13:53.515112"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 57]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 57], ["created_at", "2015-10-25 23:13:53.517516"], ["updated_at", "2015-10-25 23:13:53.517516"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 109], ["created_at", "2015-10-25 23:13:53.520717"], ["updated_at", "2015-10-25 23:13:53.520717"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$NpWodTnx.UTMz5QKVdWEHuTtsVM2nDWR6jRzJOoGpmeFqecOqx.eW"], ["created_at", "2015-10-25 23:17:03.086812"], ["updated_at", "2015-10-25 23:17:03.086812"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$3ck5Fxfh64HWRu2hSxNBWuKODJwSoO2UtA/qSReNWA1pLh0IO8eQe"], ["created_at", "2015-10-25 23:19:13.373922"], ["updated_at", "2015-10-25 23:19:13.373922"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$b26R0NRaRaHpZeq7teyPMeR74m40D9oYne3pFmnTHJoJ0frRFS4DW"], ["created_at", "2015-10-25 23:19:51.268074"], ["updated_at", "2015-10-25 23:19:51.268074"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "container_items" ("id" serial primary key, "container_id" integer, "itemable_id" integer, "itemable_type" character varying) 
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "containers" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "recipes" ("id" serial primary key, "name" character varying, "author" character varying, "directions" text, "note" character varying, "keywords" character varying[], "user_id" integer, "is_private" boolean DEFAULT 't', "location" json, "ingredients" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151025000531')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151024040448')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151024215854')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151024220725')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$FYWKjbcCF9HCQI1w0QUH.u/CxbkINzrVS08HVFY5ak4uyHqSB1bHa"], ["created_at", "2015-10-25 23:23:24.736096"], ["updated_at", "2015-10-25 23:23:24.736096"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "user_id", "ingredients", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Test"], ["user_id", 1], ["ingredients", "[]"], ["created_at", "2015-10-25 23:23:24.752883"], ["updated_at", "2015-10-25 23:23:24.752883"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$vV.2MU.PtxWpu2FCqZJ6pe1qy7IWgfx0VsaJMk4uQbNN4N4uenf1e"], ["created_at", "2015-10-25 23:23:45.034374"], ["updated_at", "2015-10-25 23:23:45.034374"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user2@example.com"], ["password_digest", "$2a$04$EabxGsm1ilBsOat1spdJCOrxlcBB1vgLkui/lBhxrtLGG77rerBd6"], ["created_at", "2015-10-25 23:23:45.051420"], ["updated_at", "2015-10-25 23:23:45.051420"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$lKrojtxb0cDEI9Arj8sCZuyzd8qGpdCMeags3P5BXBOQeLQIxZsB."], ["created_at", "2015-10-25 23:23:45.057860"], ["updated_at", "2015-10-25 23:23:45.057860"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 4], ["created_at", "2015-10-25 23:23:45.063267"], ["updated_at", "2015-10-25 23:23:45.063267"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:23:45.066019"], ["updated_at", "2015-10-25 23:23:45.066019"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.1ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 1], ["itemable_type", "Container"], ["id", 2]]
+  [1m[35mContainer Load (0.2ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 1], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 1], ["itemable_type", "Recipe"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user4@example.com"], ["password_digest", "$2a$04$BOkTjTNTqLkW15nJy303FuK.NJVUw7B5C2hc5eeppxjPu6at1g7I2"], ["created_at", "2015-10-25 23:23:45.100200"], ["updated_at", "2015-10-25 23:23:45.100200"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 5], ["created_at", "2015-10-25 23:23:45.102591"], ["updated_at", "2015-10-25 23:23:45.102591"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user5@example.com"], ["password_digest", "$2a$04$BIQzdY1h3HXINEZTiajuE.b9n1Rukq8gCMtQTpiAs9sO3cb8HIIKC"], ["created_at", "2015-10-25 23:23:45.150736"], ["updated_at", "2015-10-25 23:23:45.150736"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("ingredients", "user_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["ingredients", "[]"], ["user_id", 6], ["name", "Chicken Parm"], ["created_at", "2015-10-25 23:23:45.152770"], ["updated_at", "2015-10-25 23:23:45.152770"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"  [["itemable_type", "Recipe"], ["container_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "recipes"."id" = $3 LIMIT 1  [["container_id", 3], ["itemable_type", "Recipe"], ["id", 2]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 3], ["itemable_type", "Recipe"]]
+  [1m[35mContainer Load (0.2ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 3], ["itemable_type", "Container"]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user6@example.com"], ["password_digest", "$2a$04$2pHwKtXRrqs1QdNQcgCZtOa3V05S6NMKNSSUy7pEkvvCo87jU.o3m"], ["created_at", "2015-10-25 23:23:45.165683"], ["updated_at", "2015-10-25 23:23:45.165683"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 7], ["created_at", "2015-10-25 23:23:45.168814"], ["updated_at", "2015-10-25 23:23:45.168814"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$G3PGZXj9xiBLD4kNl586FuBa/29.lj9nus9tQJY1JTW33mRLvNoeW"], ["created_at", "2015-10-25 23:25:46.531806"], ["updated_at", "2015-10-25 23:25:46.531806"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user2@example.com"], ["password_digest", "$2a$04$RIoPDIiFc.vDKbdliS.tyen6CkTeJoAlbpCOKD/Jp7DEZAPyv73h6"], ["created_at", "2015-10-25 23:25:46.548958"], ["updated_at", "2015-10-25 23:25:46.548958"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$TkL7drZEJNfiZ0Q1QsiKouFlXmMCV4HWw80ZojYCKIB3vE46rIjWO"], ["created_at", "2015-10-25 23:25:46.555301"], ["updated_at", "2015-10-25 23:25:46.555301"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 10], ["created_at", "2015-10-25 23:25:46.560598"], ["updated_at", "2015-10-25 23:25:46.560598"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:25:46.563731"], ["updated_at", "2015-10-25 23:25:46.563731"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 5]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 5], ["itemable_type", "Container"], ["id", 6]]
+  [1m[35mContainer Load (0.3ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 5], ["itemable_type", "Container"]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 5], ["itemable_type", "Recipe"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user4@example.com"], ["password_digest", "$2a$04$Bq7mAv2qpW99o9IwOCZxsOrcmfcJgN6P.2wTVcZ42eiYaFeljwU6C"], ["created_at", "2015-10-25 23:25:46.598075"], ["updated_at", "2015-10-25 23:25:46.598075"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 11], ["created_at", "2015-10-25 23:25:46.600760"], ["updated_at", "2015-10-25 23:25:46.600760"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user5@example.com"], ["password_digest", "$2a$04$kRrVWWxM/YdxAkejN8vK8eIPhbLKnBlwq/qVoNoleYyYxxYId7dXO"], ["created_at", "2015-10-25 23:25:46.650002"], ["updated_at", "2015-10-25 23:25:46.650002"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("ingredients", "user_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["ingredients", "[]"], ["user_id", 12], ["name", "Chicken Parm"], ["created_at", "2015-10-25 23:25:46.652028"], ["updated_at", "2015-10-25 23:25:46.652028"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"  [["itemable_type", "Recipe"], ["container_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRecipe Exists (0.4ms)[0m  SELECT  1 AS one FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "recipes"."id" = $3 LIMIT 1  [["container_id", 7], ["itemable_type", "Recipe"], ["id", 3]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 7], ["itemable_type", "Recipe"]]
+  [1m[35mContainer Load (0.4ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 7], ["itemable_type", "Container"]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user6@example.com"], ["password_digest", "$2a$04$h5AHPO/iuehFvHsPPvBYhO6WNssfFBYd/N.WEOnd1bZbp/YgLYVhC"], ["created_at", "2015-10-25 23:25:46.666854"], ["updated_at", "2015-10-25 23:25:46.666854"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 13], ["created_at", "2015-10-25 23:25:46.668937"], ["updated_at", "2015-10-25 23:25:46.668937"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 8]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$tLa56lxwVPRs78zYw0VSpuKfjwHo/NOncBgDTPMnHJ23HCQdHeO6O"], ["created_at", "2015-10-25 23:26:00.024319"], ["updated_at", "2015-10-25 23:26:00.024319"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 14], ["created_at", "2015-10-25 23:26:00.036289"], ["updated_at", "2015-10-25 23:26:00.036289"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 9]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$TGV3BJZ2CeNpMwNHLb7jdelbZm58j/RdeEob3kBZyBOsUYs1SxH7C"], ["created_at", "2015-10-25 23:26:23.767641"], ["updated_at", "2015-10-25 23:26:23.767641"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 15], ["created_at", "2015-10-25 23:26:23.781013"], ["updated_at", "2015-10-25 23:26:23.781013"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 10]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$5UTpMZe7HNr6gYLnrG.UMuLpaIbuMZ4rPAVT9LO0V9eD8gAF3Ip8m"], ["created_at", "2015-10-25 23:28:08.100909"], ["updated_at", "2015-10-25 23:28:08.100909"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 16], ["created_at", "2015-10-25 23:28:08.117704"], ["updated_at", "2015-10-25 23:28:08.117704"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 11]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$uThi4DSsdZltUP9GWVG90OwYOtLlLy9sC8nc45qQGmdqJrpwTHXRq"], ["created_at", "2015-10-25 23:28:24.895020"], ["updated_at", "2015-10-25 23:28:24.895020"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 17], ["created_at", "2015-10-25 23:28:24.907044"], ["updated_at", "2015-10-25 23:28:24.907044"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 12]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$wm8wFLJgBo4Lag1ch0bav.jvhG1236QsM3pogOSAEThJjHivpGlaW"], ["created_at", "2015-10-25 23:28:54.288311"], ["updated_at", "2015-10-25 23:28:54.288311"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 18], ["created_at", "2015-10-25 23:28:54.300244"], ["updated_at", "2015-10-25 23:28:54.300244"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$rTcODnIfu.M4dY4odrnN/urUMTlMMnUR9XeDCNLmptLuHO9EuapOu"], ["created_at", "2015-10-25 23:29:16.252596"], ["updated_at", "2015-10-25 23:29:16.252596"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 19], ["created_at", "2015-10-25 23:29:16.265920"], ["updated_at", "2015-10-25 23:29:16.265920"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id") VALUES ($1, $2) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 14]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$6cpPKlDPjjFfWxBzIFGFE.4eyAlGiUn60FRp0ikmpEnq1xamnGDkq"], ["created_at", "2015-10-25 23:41:19.091331"], ["updated_at", "2015-10-25 23:41:19.091331"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 20], ["created_at", "2015-10-25 23:41:19.103582"], ["updated_at", "2015-10-25 23:41:19.103582"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$aaLEoW6H3YLq.TAIrzaoGuMGYGU04FbhxrqTYsXN8feSDjufjcx.a"], ["created_at", "2015-10-25 23:41:34.134685"], ["updated_at", "2015-10-25 23:41:34.134685"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user2@example.com"], ["password_digest", "$2a$04$JANx3YnZtsNdDXZD3IhyNeqiA48h7pGpAgUVaRFMxJxJS1caSKmUu"], ["created_at", "2015-10-25 23:41:34.151938"], ["updated_at", "2015-10-25 23:41:34.151938"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$hrIc2AYByBn/b5l58Rg6aul41DnZiD/9CTd7XytrBYs.Igd5CTTUi"], ["created_at", "2015-10-25 23:41:34.159110"], ["updated_at", "2015-10-25 23:41:34.159110"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 23], ["created_at", "2015-10-25 23:41:34.163831"], ["updated_at", "2015-10-25 23:41:34.163831"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:41:34.166655"], ["updated_at", "2015-10-25 23:41:34.166655"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user4@example.com"], ["password_digest", "$2a$04$V0MZkbuS2xEsx8oWz6cPAOMaT077mSgZBOZ3TtyiHxrizmc.j0Kfi"], ["created_at", "2015-10-25 23:41:34.187505"], ["updated_at", "2015-10-25 23:41:34.187505"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Root"], ["user_id", 24], ["created_at", "2015-10-25 23:41:34.190132"], ["updated_at", "2015-10-25 23:41:34.190132"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mContainer Load (0.2ms)[0m  SELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user5@example.com"], ["password_digest", "$2a$04$cCB7ckiOpR4LFnX3Yb2aLuyNM8s4xE5STDj8v0zsHSWFkCmfr9GFe"], ["created_at", "2015-10-25 23:41:34.246181"], ["updated_at", "2015-10-25 23:41:34.246181"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("ingredients", "user_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["ingredients", "[]"], ["user_id", 25], ["name", "Chicken Parm"], ["created_at", "2015-10-25 23:41:34.248256"], ["updated_at", "2015-10-25 23:41:34.248256"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user6@example.com"], ["password_digest", "$2a$04$hqAkDaAuFBAUerpBPXG.o.qi8/O2TpdEndrNMMpAlVbR5h7nzxO4O"], ["created_at", "2015-10-25 23:41:34.256561"], ["updated_at", "2015-10-25 23:41:34.256561"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 26], ["created_at", "2015-10-25 23:41:34.260414"], ["updated_at", "2015-10-25 23:41:34.260414"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.3ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user1@example.com"], ["password_digest", "$2a$04$6E4S1k.13AF82NmRGWwgS.4FPyvrPfZqR/TZS8egJelFEb5WNB0WG"], ["created_at", "2015-10-25 23:41:58.838626"], ["updated_at", "2015-10-25 23:41:58.838626"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user2@example.com"], ["password_digest", "$2a$04$d9UMPrvUTfPU0A5UZczqT.BOZz4fdajkJ/RqjmvDgOOreSh/mugMq"], ["created_at", "2015-10-25 23:41:58.856467"], ["updated_at", "2015-10-25 23:41:58.856467"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user3@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user3@example.com"], ["password_digest", "$2a$04$oOb.wJExfUbWdcImqtRbqusMLal6tzcwJC90y8z4BtoU1yoH1SfD2"], ["created_at", "2015-10-25 23:41:58.862989"], ["updated_at", "2015-10-25 23:41:58.862989"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 29]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 29], ["created_at", "2015-10-25 23:41:58.868443"], ["updated_at", "2015-10-25 23:41:58.868443"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test Container"], ["created_at", "2015-10-25 23:41:58.872192"], ["updated_at", "2015-10-25 23:41:58.872192"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "itemable_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["itemable_type", "Container"], ["container_id", 20], ["itemable_id", 21]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1[0m  [["container_id", 20], ["itemable_type", "Container"], ["id", 21]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 20], ["itemable_type", "Recipe"]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user4@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user4@example.com"], ["password_digest", "$2a$04$tgFVWA1m1BTsiV1jT9mL.OeKEJ4BJFgponu5Vdpx/7bMKvWfvz1KG"], ["created_at", "2015-10-25 23:41:58.905743"], ["updated_at", "2015-10-25 23:41:58.905743"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 30]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 30], ["created_at", "2015-10-25 23:41:58.908815"], ["updated_at", "2015-10-25 23:41:58.908815"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user5@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user5@example.com"], ["password_digest", "$2a$04$1hphLkrdG7qLgLxs4/ofm.aAjGC8B84MRh6YY/81IEf7jt/EVIWki"], ["created_at", "2015-10-25 23:41:58.954075"], ["updated_at", "2015-10-25 23:41:58.954075"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("ingredients", "user_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["ingredients", "[]"], ["user_id", 31], ["name", "Chicken Parm"], ["created_at", "2015-10-25 23:41:58.956103"], ["updated_at", "2015-10-25 23:41:58.956103"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "container_items" ("itemable_type", "container_id", "itemable_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["itemable_type", "Recipe"], ["container_id", 22], ["itemable_id", 5]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRecipe Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "recipes" INNER JOIN "container_items" ON "recipes"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "recipes"."id" = $3 LIMIT 1[0m  [["container_id", 22], ["itemable_type", "Recipe"], ["id", 5]]
+  [1m[35mContainer Load (0.3ms)[0m  SELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2  [["container_id", 22], ["itemable_type", "Container"]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'user6@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user6@example.com"], ["password_digest", "$2a$04$I5h7UhCJZ1iN22hmLoqX5.xCAkXcNqaRy7Aft8LsejpSGTfiK9CrS"], ["created_at", "2015-10-25 23:41:58.968713"], ["updated_at", "2015-10-25 23:41:58.968713"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "containers" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root"], ["user_id", 32], ["created_at", "2015-10-25 23:41:58.971757"], ["updated_at", "2015-10-25 23:41:58.971757"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mContainer Exists (0.2ms)[0m  SELECT  1 AS one FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2 AND "containers"."id" = $3 LIMIT 1  [["container_id", 23], ["itemable_type", "Container"], ["id", 23]]
+  [1m[36mContainer Load (0.2ms)[0m  [1mSELECT "containers".* FROM "containers" INNER JOIN "container_items" ON "containers"."id" = "container_items"."itemable_id" WHERE "container_items"."container_id" = $1 AND "container_items"."itemable_type" = $2[0m  [["container_id", 23], ["itemable_type", "Container"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK

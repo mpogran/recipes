@@ -5,6 +5,7 @@ gem 'bitters'
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'email_validator'
+gem 'formtastic', '~> 3.0'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 gem 'jbuilder', '~> 2.0'

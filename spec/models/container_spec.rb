@@ -27,15 +27,15 @@ RSpec.describe Container, type: :model do
       User.find(u.id)
     end
     let(:container) do
-      c = Container.create(name: 'Test', user: user)
+      c = Container.create(name: 'Root', user: user)
       Container.find(c.id)
     end
     let(:child_container) do
-      c = Container.create(name: 'Child')
+      c = create(:container)
       Container.find(c.id)
     end
     let(:recipe) do
-      r = Recipe.create()
+      r = create(:recipe)
       Recipe.find(r.id)
     end
 
@@ -49,7 +49,6 @@ RSpec.describe Container, type: :model do
       expect(container.add_item(recipe)).to be true
       expect(container.recipes).to include(recipe)
       expect(container.containers).to_not include(recipe)
-      expect(user.recipes).to include(recipe)
     end
 
     it 'will not create a circular relationship' do

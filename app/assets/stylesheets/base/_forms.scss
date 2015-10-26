@@ -26,6 +26,10 @@ label {
   }
 }
 
+li.input {
+  list-style: none;
+}
+
 #{$all-text-inputs},
 select[multiple=multiple] {
   background-color: $base-background-color;

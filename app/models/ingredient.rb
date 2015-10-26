@@ -3,10 +3,10 @@ class Ingredient
   include ActiveModel::Serializers::JSON
 
   # Attributes
-  attr_accessor :name, :category, :quantity, :description
+  attr_accessor :name, :category, :quantity, :modifier, :description
 
   # Validations
-  validates :name, :description, presence: true
+  validates :name, presence: true
 
   def attributes=(hash)
     hash.each do |key, value|
@@ -18,8 +18,9 @@ class Ingredient
     {
       "name" => name,
       "category" => category,
+      "quantity" => quantity,
+      "modifier" => modifier,
       "description" => description,
-      "quantity" => quantity
     }
   end
 

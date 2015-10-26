@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151025000531) do
     t.text     "directions"
     t.string   "note"
     t.string   "keywords",                                array: true
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.boolean  "is_private",  default: true
     t.json     "location"
     t.json     "ingredients"

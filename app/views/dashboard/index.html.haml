@@ -1,0 +1,4 @@
+- if current_user
+  %h1= "Dashboard"
+- else
+  %h1= "Please #{link_to 'log in', login_path}".html_safe

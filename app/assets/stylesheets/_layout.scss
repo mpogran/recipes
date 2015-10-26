@@ -1,0 +1,40 @@
+header {
+  @include outer-container(100%);
+  background: $blue;
+
+  #logo {
+    @include span-columns(2);
+    padding: 10px 0;
+    .img {height: 40px;}
+  }
+  #navigation {
+  }
+  #controls {
+    @include shift(8);
+    @include span-columns(2);
+    padding-top: 20px;
+    a {
+      margin-right: 10px;
+      color: white;
+    }
+  }
+}
+
+.col-container {
+  @include outer-container($max-width);
+}
+
+.dark-blue {
+  background: darken($blue, 25%);
+  color: white;
+}
+
+.pill {
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2em;
+}

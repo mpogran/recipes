@@ -1,33 +1,42 @@
 class Recipe < ActiveRecord::Base
 
   # Associations
-  belongs_to :user, foreign_key: 'owner_id'
-  has_many :ingredients do
-
-  end
+  belongs_to :user
 
   # Validations
-  validates :name, :owner, presence: true
+  validates :name, :user, presence: true
 
   # Callbacks
-  after_initialize :initialize_ingredient_list
-  before_save :set_ingredients
+  after_initialize :initialize_ingredients
 
-  def ingredients
-    @ingredient_list
-  end
+  def set_location(type, hash)
+    keys = case type
+    when :website
+      [:url]
+    when :book
+      [:edition, :page]
+    when :magazine
+      [:issue, :page]
+    end
 
-  def ingredients=(ingredients)
-    @ingredient_list = ingredients
+    if keys.all? {|k| hash.key?(k)}
+      self.location = {type: type.to_s, location: hash }
+    else
+      raise ArgumentError.new('Invalid location for type.')
+    end
   end
 
   private
-  def initialize_ingredient_list
-    @ingredient_list = self[:ingredients] || []
+  def initialize_ingredients
+    self.ingredients ||= []
   end
 
-  def set_ingredients
-    self[:ingredients] = @ingredient_list.map { |i| i.as_json }
+  def location
+    super
+  end
+
+  def location=(val)
+    super(val)
   end
 
 end
