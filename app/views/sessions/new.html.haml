@@ -1,6 +1,4 @@
-%h1='Login'
-
-= semantic_form_for 'user', url: login_path do |f|
-  = f.input :email
-  = f.input :password
-  = f.submit 'Login'
+.centered.col-5
+  %h1='Login'
+  .tp-marg-l.pad-med.l-gray.rd.sdw
+    = render partial: 'shared/login_form'

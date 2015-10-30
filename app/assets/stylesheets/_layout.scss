@@ -20,21 +20,4 @@ header {
   }
 }
 
-.col-container {
-  @include outer-container($max-width);
-}
-
-.dark-blue {
-  background: darken($blue, 25%);
-  color: white;
-}
-
-.pill {
-  border-radius: 25px;
-  padding: 10px 15px;
-}
-
-h1 {
-  margin: 20px 0;
-  font-size: 2em;
-}
+@include sticky-footer(50px, "#main", "#main_footer", "footer")

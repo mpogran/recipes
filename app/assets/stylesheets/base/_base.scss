@@ -2,20 +2,39 @@
 // http://bitters.bourbon.io
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
+@import url(https://fonts.googleapis.com/css?family=Signika);
 
 @import "variables";
-@import "colors";
-
-// Neat Settings -- uncomment if using Neat -- must be imported before Neat
-// @import "grid-settings";
-
+@import "grid-settings";
 @import "buttons";
 @import "forms";
 @import "lists";
 @import "tables";
 @import "typography";
 
+@mixin sticky-footer($footer-height, $root-selector: unquote("#root"), $root-footer-selector: unquote("#root_footer"), $footer-selector: unquote("#footer")) {
+  html, body {
+    height: 100%;
+  }
+  #{$root-selector} {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -$footer-height;
+    #{$root-footer-selector} {
+      height: $footer-height;
+    }
+  }
+  #{$footer-selector} {
+    clear: both;
+    position: relative;
+    height: $footer-height;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: $medium_blue;
 }

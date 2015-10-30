@@ -1,4 +1,21 @@
-#{$all-buttons} {
+@mixin psudo-style($color) {
+  &:hover,
+  &:focus {
+    background-color: shade($color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $color;
+    }
+  }
+}
+
+#{$all-buttons}, .btn {
   appearance: none;
   background-color: $action-color;
   border: 0;
@@ -17,19 +34,12 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  @include psudo-style($action-color);
 
-  &:hover,
-  &:focus {
-    background-color: shade($action-color, 20%);
-    color: #fff;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-
-    &:hover {
-      background-color: $action-color;
+  @each $color_class, $color in $colors {
+    &.#{$color_class} {
+      background-color: $color;
+      @include psudo-style($color);
     }
   }
 }

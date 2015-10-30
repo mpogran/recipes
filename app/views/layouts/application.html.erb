@@ -7,10 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render partial: 'shared/header' %>
-<section class='col-container'>
-  <%= yield %>
-</section>
-
+  <header>
+    <%= render partial: 'shared/header' %>
+  </header>
+  <section id="main" class='col-container'>
+    <%= yield %>
+    <div id="main_footer"></div>
+  </section>
+  <footer class='d-blue'>
+    <%= render partial: 'shared/footer' %>
+  </footer>
 </body>
 </html>

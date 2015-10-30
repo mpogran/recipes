@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'angularjs-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bitters'
 gem 'bourbon'

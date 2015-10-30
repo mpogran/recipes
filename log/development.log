@@ -2093,3 +2093,2089 @@ Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8b
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-26 00:46:33 -0400
+
+
+Started GET "/" for ::1 at 2015-10-26 18:49:18 -0400
+
+ActiveRecord::NoDatabaseError (FATAL:  role "personal" does not exist
+):
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:665:in `rescue in connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (83.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-26 18:50:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (69.9ms)
+  Rendered shared/_header.html.haml (4.3ms)
+Completed 200 OK in 449ms (Views: 423.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-26 18:50:01 -0400
+
+
+Started GET "/logout" for ::1 at 2015-10-26 18:50:10 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-26 18:50:10 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (29.8ms)
+  Rendered shared/_header.html.haml (3.0ms)
+Completed 200 OK in 124ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-10-26 18:50:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (12.4ms)
+  Rendered users/new.html.haml within layouts/application (14.0ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-29 23:33:18 -0400
+
+ActiveRecord::NoDatabaseError (FATAL:  role "personal" does not exist
+):
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:665:in `rescue in connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-29 23:34:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.haml within layouts/application (1.9ms)
+  Rendered shared/_header.html.haml (7.7ms)
+Completed 200 OK in 1591ms (Views: 1572.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:34:15 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:34:16 -0400
+
+
+Started GET "/login" for ::1 at 2015-10-29 23:35:24 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (0.4ms)
+  Rendered sessions/new.html.haml within layouts/application (1.9ms)
+  Rendered shared/_header.html.haml (2.8ms)
+Completed 200 OK in 99ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-29 23:35:31 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (35.0ms)
+  Rendered sessions/new.html.haml within layouts/application (36.3ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:35:31 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:36:15 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.9ms)
+  Rendered shared/_header.html.haml (2.7ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-29 23:41:40 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (7.0ms)
+  Rendered shared/_header.html.haml (3.0ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:41:41 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:41:42 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.4ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:41:42 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:45:02 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (68.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (70.4ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 351ms (Views: 350.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:03 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:45:04 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (55.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (56.1ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 97ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:04 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:45:06 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18c47fed784466d4fa13769add403697f27b3c9d02eaa64fbac65fa234a30a5b.css?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:06 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:45:38 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.2ms)
+  Rendered dashboard/index.html.haml within layouts/application (4.8ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 774ms (Views: 773.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b930a6f6e87e4319e2e63fc159886a32692bb011cb61520ba3f2266a5f4bf8d8.css?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:45:39 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:56:39 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.0ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 695ms (Views: 694.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-57a24c9275fcd742b99c0d18581e42f9782f8fa6dcb98de9248baec20b5669b9.css?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:56:40 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:57:23 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.3ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 755ms (Views: 754.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-886bc9e19be66e3efe3640c5e32f42108544e11380b1b0939278f9e16a3e8772.css?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:57:24 -0400
+
+
+Started GET "/" for ::1 at 2015-10-29 23:58:14 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (1.8ms)
+Completed 200 OK in 706ms (Views: 704.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e8f7effc68521902b3b2c8dc13b656cdb12b0188c708193ab593c82f8da540df.css?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-29 23:58:14 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:00:16 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (6.1ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.8ms)
+  Rendered shared/_header.html.haml (62.7ms)
+Completed 200 OK in 785ms (Views: 784.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-5a322756f5a07ea05b4bb1bb091f1b6dcc3170cb789594580b9d791d243f7c88.css?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:00:17 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:12:21 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.2ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 706ms (Views: 705.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-4dba4686fce9eaa522580f342fca4fe8a73dadb938ae0ef839b72124b59ff556.css?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:12:21 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:13:29 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.8ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 784ms (Views: 783.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-027f3e76db6cbdfe0680dc9d6b8dbd15deb8765e8f2dfe572eeaecf3d3917f97.css?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:13:30 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:14:24 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.9ms)
+  Rendered shared/_header.html.haml (1.7ms)
+Completed 200 OK in 722ms (Views: 721.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-18da465c47d701a103f999838393a37839df38c7de8be6836bbca056e012766c.css?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:14:24 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:14:52 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.6ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 734ms (Views: 733.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-20221bceb9eeae40625f51ffb88124b81e490416e5318c95c8cee1521f3dbefc.css?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:14:53 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:15:26 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 731ms (Views: 730.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8d16c85199860ee1e806083ee64448195cbe62680e118cd95c089e9e0c26dfa.css?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:15:26 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:15:51 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.4ms)
+  Rendered shared/_header.html.haml (1.1ms)
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8d16c85199860ee1e806083ee64448195cbe62680e118cd95c089e9e0c26dfa.css?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:15:51 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:17:09 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (79.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (80.1ms)
+  Rendered shared/_header.html.haml (2.4ms)
+Completed 200 OK in 755ms (Views: 754.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b70686c224dec321cbb2a2287b6cc8ded78e7445eb3c1c380daaaca367201d57.css?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:17:10 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:19:28 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (File to import not found or unreadable: colors.
+Load paths:
+  /Users/personal/Projects/recipes/app/assets/images
+  /Users/personal/Projects/recipes/app/assets/javascripts
+  /Users/personal/Projects/recipes/app/assets/stylesheets
+  /Users/personal/Projects/recipes/vendor/assets/javascripts
+  /Users/personal/Projects/recipes/vendor/assets/stylesheets
+  /Library/Ruby/Gems/2.0.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Library/Ruby/Gems/2.0.0/gems/neat-1.7.2/app/assets/stylesheets
+  /Library/Ruby/Gems/2.0.0/gems/jquery-rails-4.0.5/vendor/assets/javascripts
+  /Library/Ruby/Gems/2.0.0/gems/formtastic-3.1.3/app/assets/stylesheets
+  /Library/Ruby/Gems/2.0.0/gems/coffee-rails-4.1.0/lib/assets/javascripts
+  /Library/Ruby/Gems/2.0.0/gems/bourbon-4.2.6/app/assets/stylesheets
+  /Library/Ruby/Gems/2.0.0/gems/angularjs-rails-1.4.7/vendor/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>Recipes</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/base/_base.scss:7
+  app/assets/stylesheets/application.scss:8
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4520485932799395299_70319321966600'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (21.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 00:20:07 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.3ms)
+  Rendered shared/_header.html.haml (2.0ms)
+Completed 200 OK in 711ms (Views: 710.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2d3a4dc0a21bb87455fc08f30bb7bf8a84f59d2df7252d7792a03078b4b23ecd.css?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:20:08 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:21:53 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.1ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.7ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 767ms (Views: 766.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/application.self-4513094b15f7f3b3197835fb72d04f1c52227093464c67abf3c34fb550550087.css?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:21:54 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:22:05 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.3ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 769ms (Views: 768.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/application.self-b8ba93c0be60ee301429868e3be80a02b248296e3413e214897db6fd0a64ea63.css?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:22:05 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:23:36 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.8ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 673ms (Views: 672.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-cde130d98bcdd2cfa1958041ff256e48ac9963bc03e36aac3271c9d82571fa07.css?body=1" for ::1 at 2015-10-30 00:23:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:23:36 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:23:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:23:37 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:23:37 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:23:37 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:23:37 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:25:26 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.1ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 766ms (Views: 765.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c2c8ea2dc707f9e16d253f1e06ca5778060d140881baba8138a174b3b85c2b0f.css?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:25:26 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:25:42 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (2.5ms)
+Completed 200 OK in 756ms (Views: 755.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-1e47102b3ef255f1c4347954c25102c2cec80d45c38de1a57e43d69539ae1b19.css?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:25:43 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:26:06 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.0ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.7ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 749ms (Views: 748.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-26f28c60e0d721d046550495e3a17b6c7050d4ef19ea21b5e75e8b475c577aad.css?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:26:07 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:28:32 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.0ms)
+  Rendered shared/_header.html.haml (1.7ms)
+Completed 200 OK in 684ms (Views: 683.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2f863badfe4fe6946f846e05f997cdd496fcc5b93841fb8134962d391fc1748b.css?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:28:33 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:37:24 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 685ms (Views: 684.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2b16aa898bc567c9e5ad5c7ec69e7dfaabe3d9ae9d721aba2b1eb6a865395523.css?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:37:24 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:39:15 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.0ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 757ms (Views: 756.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-685db264d979c1d833a11598f34bf157f64225162e38875c5780cf485e433f1e.css?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:39:16 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:40:21 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.2ms)
+  Rendered shared/_header.html.haml (1.8ms)
+Completed 200 OK in 714ms (Views: 713.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-663cef43854702064a742fe287f314aa97e9abc871e69a08ff4e074ee174656a.css?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:40:21 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:40:33 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.9ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 46ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-663cef43854702064a742fe287f314aa97e9abc871e69a08ff4e074ee174656a.css?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:40:33 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:40:43 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.4ms)
+  Rendered shared/_header.html.haml (1.1ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-663cef43854702064a742fe287f314aa97e9abc871e69a08ff4e074ee174656a.css?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:40:43 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:41:03 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 342ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after ".": expected class name, was "#3498DB #2980B9..."):
+    2: <html>
+    3: <head>
+    4:   <title>Recipes</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/_skin.scss:5
+  app/assets/stylesheets/application.scss:13
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4520485932799395299_70319321966600'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 00:41:57 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after ".": expected class name, was "#3498DB"):
+    2: <html>
+    3: <head>
+    4:   <title>Recipes</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/_skin.scss:6
+  app/assets/stylesheets/application.scss:13
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4520485932799395299_70319321966600'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 00:45:16 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 370ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "...m-gray 'l-gray'": expected ")", was ": $light-gray);"):
+    2: <html>
+    3: <head>
+    4:   <title>Recipes</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/_skin.scss:3
+  app/assets/stylesheets/application.scss:13
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___4520485932799395299_70319321966600'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 00:45:29 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.3ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 709ms (Views: 708.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-edf53f706cbc424d5a9d28bfc04a080d3d521ff630ece880fd1f143a90e143d2.css?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:45:30 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:46:01 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.0ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.6ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 50ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-edf53f706cbc424d5a9d28bfc04a080d3d521ff630ece880fd1f143a90e143d2.css?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:46:01 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:46:49 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.0ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 716ms (Views: 715.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-85bb4f7baf2969b5699e2fc10fc7cbe209d68bbd1dd523c81f1c35f17d5b0d5d.css?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:46:50 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:47:00 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.3ms)
+  Rendered shared/_header.html.haml (1.4ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-85bb4f7baf2969b5699e2fc10fc7cbe209d68bbd1dd523c81f1c35f17d5b0d5d.css?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:47:00 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:48:03 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.8ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.4ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 775ms (Views: 774.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-4cf8cd412579e68d10890c232549445c04db4abd695f11191d33f7914091abe1.css?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:48:03 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:51:55 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.7ms)
+  Rendered dashboard/index.html.haml within layouts/application (6.4ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 723ms (Views: 722.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-095e286c7f8d866571522ababc6f962bad8a34953c38da1544353af29ca59ebf.css?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:51:56 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:52:31 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (5.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.9ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 125ms (Views: 124.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-095e286c7f8d866571522ababc6f962bad8a34953c38da1544353af29ca59ebf.css?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:52:31 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:57:06 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.2ms)
+  Rendered shared/_header.html.haml (1.5ms)
+Completed 200 OK in 858ms (Views: 857.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-63a09e3995ca1f3ace90aa7613092a21be34a4cc6b33fec9f4f86d6b103b4ca7.css?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:57:06 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:57:18 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.3ms)
+  Rendered shared/_header.html.haml (1.1ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-63a09e3995ca1f3ace90aa7613092a21be34a4cc6b33fec9f4f86d6b103b4ca7.css?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:57:18 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:57:40 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 113ms (Views: 112.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-63a09e3995ca1f3ace90aa7613092a21be34a4cc6b33fec9f4f86d6b103b4ca7.css?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:57:40 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 00:57:54 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.2ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 733ms (Views: 732.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-08688c1a59d25bae03ca2c6b4a180f0f93f04307fc10939c2eec5a5339fe4218.css?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 00:57:55 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:02:20 -0400
+Processing by DashboardController#index as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered dashboard/index.html.haml within layouts/application (5.1ms)
+  Rendered shared/_header.html.haml (2.1ms)
+Completed 200 OK in 748ms (Views: 747.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/application.self-a8c7fbc92b4598a6679e3f0a2b3cde59f633c1e9fd5dd5be36ef16533cb7f94d.css?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:02:20 -0400
+
+
+Started POST "/login" for ::1 at 2015-10-30 01:02:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yPSLOfSXI0XEXEnDCTcUIB4XyFFQ0bVa3zvCuwqBN/Z9z5uQ0U8oK5JazAsLNiDki8+78PpSIuFbW8x/7+XMfA==", "user"=>{"email"=>"mpogran@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "mpogran@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 176ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 01:02:36 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (2.2ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2015-10-30 01:02:45 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:02:45 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (5.3ms)
+  Rendered sessions/new.html.haml within layouts/application (6.0ms)
+  Rendered shared/_header.html.haml (3.4ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:03:12 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (4.6ms)
+  Rendered sessions/new.html.haml within layouts/application (6.1ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8c7fbc92b4598a6679e3f0a2b3cde59f633c1e9fd5dd5be36ef16533cb7f94d.css?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:03:12 -0400
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:03:13 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (5.1ms)
+  Rendered sessions/new.html.haml within layouts/application (5.7ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8c7fbc92b4598a6679e3f0a2b3cde59f633c1e9fd5dd5be36ef16533cb7f94d.css?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:03:13 -0400
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:03:28 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (4.5ms)
+  Rendered sessions/new.html.haml within layouts/application (6.1ms)
+  Rendered shared/_header.html.haml (1.2ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8c7fbc92b4598a6679e3f0a2b3cde59f633c1e9fd5dd5be36ef16533cb7f94d.css?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:03:28 -0400
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:03:34 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (4.9ms)
+  Rendered sessions/new.html.haml within layouts/application (6.4ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-a8c7fbc92b4598a6679e3f0a2b3cde59f633c1e9fd5dd5be36ef16533cb7f94d.css?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:03:34 -0400
+
+
+Started GET "/login" for ::1 at 2015-10-30 01:04:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered shared/_login_form.html.haml (5.4ms)
+  Rendered sessions/new.html.haml within layouts/application (6.0ms)
+  Rendered shared/_header.html.haml (1.7ms)
+Completed 200 OK in 805ms (Views: 804.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b03307eb894e968b34f91ff873356de80e54c6df5d4dde363c4c6ca4d9e296e5.css?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:04:02 -0400
+
+
+Started POST "/login" for ::1 at 2015-10-30 01:04:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s+hBRjOQqnLO0nF+JbNAE+Hv/MkZKrqifmUom6Uc5+YG01HvFkihHJjU9LYnsnTXdDePaLOpLRn6BSZfQHgcbA==", "user"=>{"email"=>"mpogran@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "mpogran@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 01:04:18 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (2.0ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 01:05:07 -0400
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (1.8ms)
+  Rendered shared/_header.html.haml (1.6ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/application.self-b03307eb894e968b34f91ff873356de80e54c6df5d4dde363c4c6ca4d9e296e5.css?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:05:07 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:05:19 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (2.0ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-b03307eb894e968b34f91ff873356de80e54c6df5d4dde363c4c6ca4d9e296e5.css?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:05:19 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:05:30 -0400
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (1.9ms)
+  Rendered shared/_header.html.haml (1.3ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-b03307eb894e968b34f91ff873356de80e54c6df5d4dde363c4c6ca4d9e296e5.css?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:05:30 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:12:26 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (0.9ms)
+  Rendered shared/_header.html.haml (1.5ms)
+  Rendered shared/_header.html.haml (1.1ms)
+Completed 200 OK in 833ms (Views: 832.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-4a66e9ede3cf9f4d76956f971ee9f56f3deffe211e7bda4209004496b90ec184.css?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:12:27 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:12:51 -0400
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (0.9ms)
+  Rendered shared/_header.html.haml (1.5ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 123ms (Views: 122.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-4a66e9ede3cf9f4d76956f971ee9f56f3deffe211e7bda4209004496b90ec184.css?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:12:51 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:13:07 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (0.9ms)
+  Rendered shared/_header.html.haml (2.5ms)
+  Rendered shared/_footer.html.haml (0.1ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-4a66e9ede3cf9f4d76956f971ee9f56f3deffe211e7bda4209004496b90ec184.css?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:13:07 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:15:56 -0400
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (0.8ms)
+  Rendered shared/_header.html.haml (1.8ms)
+  Rendered shared/_footer.html.haml (0.6ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-4a66e9ede3cf9f4d76956f971ee9f56f3deffe211e7bda4209004496b90ec184.css?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:15:56 -0400
+
+
+Started GET "/" for ::1 at 2015-10-30 01:15:59 -0400
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/index.html.haml within layouts/application (0.8ms)
+  Rendered shared/_header.html.haml (1.2ms)
+  Rendered shared/_footer.html.haml (0.0ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/application.self-4a66e9ede3cf9f4d76956f971ee9f56f3deffe211e7bda4209004496b90ec184.css?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/angular.self-5657ace19fa32e4720c470d98deb20d67d0bd0221bdf5a4b447ab31e8249a65b.js?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 01:15:59 -0400
+
+
+Started GET "/assets/icon-86b12a5ef0f958f6dedb7895ad1e053575bd7303effaefbe71f981335a02e76e.svg" for ::1 at 2015-10-30 01:15:59 -0400

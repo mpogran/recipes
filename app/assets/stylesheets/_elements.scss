@@ -1,0 +1,49 @@
+// Grid containers and items
+.col-container {
+  @include outer-container($max-width);
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include span-columns($i);
+  }
+}
+
+// Direction
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.centered {
+  float: none;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Margin
+@each $size_class, $size_val in $sizes {
+  .pad-#{$size_class} {padding: $size_val;}
+  .marg-#{$size_class} {margin: $size_val;}
+  @each $dir_class, $dir_atr in $directions {
+    .#{$dir_class}-pad-#{$size_class} {
+      padding-#{$dir_atr}: $size_val;
+    }
+    .#{$dir_class}-marg-#{$size_class} {
+      margin-#{$dir_atr}: $size_val;
+    }
+  }
+}
+
+//
+
+.pill {
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2em;
+}

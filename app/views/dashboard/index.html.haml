@@ -1,4 +1,7 @@
 - if current_user
   %h1= "Dashboard"
+  .centered.col-12.marg-l.l-gray.rd.sdw
+    = "Hello World!"
 - else
-  %h1= "Please #{link_to 'log in', login_path}".html_safe
+  .centered.col-5.tp-marg-xl.pad-med.l-gray.rd.sdw
+    = render partial: 'shared/login_form'

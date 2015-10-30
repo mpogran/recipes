@@ -1,0 +1,13 @@
+@each $color_class, $color in $colors {
+  .#{$color_class} {
+    background-color: $color;
+  }
+}
+
+.rd {
+  border-radius: $base-border-radius;
+}
+
+.sdw {
+  box-shadow: 0 0 0 $medium-gray;
+}

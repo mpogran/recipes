@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: 'Signika', sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -16,17 +16,20 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #4E419B;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
+$blue: #3498DB;
+$medium-blue: #2980B9;
+$dark-blue: #2C3E50;
+$red: #E74C3C;
+$dark-gray: #6F7171;
+$medium-gray: #D3D7D7;
+$light-gray: #F8FDFE;
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: $medium-gray;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
@@ -40,3 +43,15 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Maps
+$colors: (
+  'blue': $blue, 'm-blue': $medium-blue, 'd-blue': $dark-blue,'red': $red,
+  'd-gray': $dark-gray, 'm-gray': $medium-gray, 'l-gray': $light-gray
+);
+$directions: (
+  'tp': 'top', 'rt': 'right', 'btm': 'bottom', 'lt': 'left'
+);
+$sizes: (
+  'xl': 100px, 'lg': 50px, 'med': 25px, 'sm': 10px, 'xs': 5px
+);
