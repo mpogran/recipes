@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: 'Signika', sans-serif;
+$base-font-family: 'Vollkorn', serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -16,17 +16,20 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #3498DB;
-$medium-blue: #2980B9;
-$dark-blue: #2C3E50;
-$red: #E74C3C;
+$green: #4CBFAA;
+$medium-green: #337F71;
+$dark-green: #194039;
+$red: #FF644C;
+$blue: #48B5F2;
 $dark-gray: #6F7171;
 $medium-gray: #D3D7D7;
-$light-gray: #F8FDFE;
+$light-gray: #e3e7e8;
+$white: #FFF;
+$black: #000;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $green;
 
 // Border
 $base-border-color: $medium-gray;
@@ -46,8 +49,9 @@ $base-timing: ease;
 
 // Maps
 $colors: (
-  'blue': $blue, 'm-blue': $medium-blue, 'd-blue': $dark-blue,'red': $red,
-  'd-gray': $dark-gray, 'm-gray': $medium-gray, 'l-gray': $light-gray
+  'green': $green, 'm-green': $medium-green, 'd-green': $dark-green,'red': $red,
+  'd-gray': $dark-gray, 'm-gray': $medium-gray, 'l-gray': $light-gray,
+  'blue': $blue, 'white': $white, 'black': $black
 );
 $directions: (
   'tp': 'top', 'rt': 'right', 'btm': 'bottom', 'lt': 'left'

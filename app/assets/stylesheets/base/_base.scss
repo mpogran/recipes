@@ -2,7 +2,7 @@
 // http://bitters.bourbon.io
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
-@import url(https://fonts.googleapis.com/css?family=Signika);
+@import url(https://fonts.googleapis.com/css?family=Vollkorn);
 
 @import "variables";
 @import "grid-settings";
@@ -19,7 +19,6 @@
   #{$root-selector} {
     clear: both;
     min-height: 100%;
-    height: auto !important;
     height: 100%;
     margin-bottom: -$footer-height;
     #{$root-footer-selector} {
@@ -36,5 +35,5 @@
 body {
   margin: 0;
   padding: 0;
-  background: $medium_blue;
+  background: url('blur1.jpg');
 }

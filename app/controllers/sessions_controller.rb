@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   # GET /login
   def new
+    @large_logo = true
   end
 
   # POST /login

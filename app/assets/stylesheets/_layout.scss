@@ -1,23 +1,30 @@
 header {
   @include outer-container(100%);
-  background: $blue;
 
-  #logo {
-    @include span-columns(2);
-    padding: 10px 0;
-    .img {height: 40px;}
-  }
-  #navigation {
+  #logo-container {
+    @include shift(4);
+    @include span-columns(4);
+    #logo {
+      width: 135px;
+      margin: 25px auto;
+      &.large {
+        width: 275px;
+      }
+    }
   }
   #controls {
-    @include shift(8);
-    @include span-columns(2);
-    padding-top: 20px;
+    @include span-columns(4);
+    padding-top: 35px;
     a {
       margin-right: 10px;
       color: white;
+      &:last-child {margin-right: 0;}
     }
   }
+}
+
+footer {
+
 }
 
 @include sticky-footer(50px, "#main", "#main_footer", "footer")

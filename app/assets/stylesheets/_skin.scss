@@ -1,13 +1,49 @@
 @each $color_class, $color in $colors {
+  // Background
   .#{$color_class} {
     background-color: $color;
+    &.half-a {background-color: transparentize($color, .75);}
+  }
+  // Bordered
+  .bor-#{$color_class} {border: 2px solid $color;}
+}
+
+// Rounded
+.rd {border-radius: $base-border-radius;}
+// Shadowed
+.sdw {box-shadow: 0 0 6px $dark-gray;}
+
+// ul skin
+ul {
+  &.alt {
+    li:nth-child(even) {background: $medium-gray;}
+  }
+  &.file {
+    li {
+      cursor: pointer;
+      &:hover {
+        background-color: $action-color;
+        color: $white;
+      }
+    }
   }
 }
 
-.rd {
-  border-radius: $base-border-radius;
+// Color types
+@each $color_class, $color in $colors {
+  .t-#{$color_class} {
+    color: $color;
+  }
 }
 
-.sdw {
-  box-shadow: 0 0 0 $medium-gray;
+.file-container {
+  border: 1px solid $light-gray;
+  border-radius: $base-border-radius;
+  ul {
+    padding: 2px;
+    font-size: 0.85em;
+    li {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
 }

@@ -1,26 +1,37 @@
 @mixin psudo-style($color) {
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     background-color: shade($color, 20%);
+    border-color: shade($color, 20%);
     color: #fff;
   }
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+    &:hover {background-color: $color;}
+  }
+}
+@mixin alt-style($color) {
+  &.alt {
+    background: none;
+    border-color: $color;
+    color: $color;
 
-    &:hover {
-      background-color: $color;
+    &:hover, &:focus {background: rgba(0, 0, 0, .05);}
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      &:hover {background-color: none;}
     }
   }
 }
 
 #{$all-buttons}, .btn {
+  @include transition(border-color background-color $base-duration $base-timing);
   appearance: none;
   background-color: $action-color;
-  border: 0;
+  border: 2px solid $action-color;
   border-radius: $base-border-radius;
-  color: #fff;
+  color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -30,16 +41,18 @@
   line-height: 1;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
-  transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   @include psudo-style($action-color);
+  @include alt-style($action-color);
 
   @each $color_class, $color in $colors {
     &.#{$color_class} {
       background-color: $color;
+      border-color: $color;
       @include psudo-style($color);
+      @include alt-style($color);
     }
   }
 }

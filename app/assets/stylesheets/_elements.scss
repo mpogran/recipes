@@ -10,22 +10,30 @@
 }
 
 // Direction
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
+.left {float: left;}
+.right {float: right;}
 .centered {
   float: none;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-// Margin
+// Text align
+.t-centered {text-align: center;}
+.t-left {text-align: left;}
+.t-right {text-align: right;}
+
+// Margin and padding
 @each $size_class, $size_val in $sizes {
   .pad-#{$size_class} {padding: $size_val;}
   .marg-#{$size_class} {margin: $size_val;}
+
+  .vert-pad-#{$size_class} {padding-top: $size_val; padding-bottom: $size_val;}
+  .vert-marg-#{$size_class} {margin-top: $size_val; margin-bottom: $size_val;}
+
+  .hor-pad-#{$size_class} {padding-left: $size_val; padding-right: $size_val;}
+  .hor-marg-#{$size_class} {margin-left: $size_val; margin-right: $size_val;}
+
   @each $dir_class, $dir_atr in $directions {
     .#{$dir_class}-pad-#{$size_class} {
       padding-#{$dir_atr}: $size_val;
@@ -36,14 +44,23 @@
   }
 }
 
-//
+.fill-h {height: 100%;}
+.fill-w {height: 100%;}
 
+// Elements
 .pill {
   border-radius: 25px;
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 
-h1 {
-  margin: 20px 0;
-  font-size: 2em;
+.split {
+  div:first-child {
+    width: 40%;
+    float: left;
+  }
+  div:last-child {
+    @include pad(0 0 0 default);
+    width: 60%;
+    float: left;
+  }
 }
