@@ -39,6 +39,25 @@ ul {
 .file-container {
   border: 1px solid $light-gray;
   border-radius: $base-border-radius;
+  .actions {
+    @include clearfix;
+    @include display(flex);
+    margin: 2px;
+    .action {
+      @include transition(background-color $base-duration $base-timing);
+      @include flex(1);
+      padding: 4px 10px;
+      color: white;
+      font-size: .85em;
+      text-align: center;
+      border-right: 1px solid white;
+      background-color: $dark-gray;
+      cursor: pointer;
+      &:hover {
+        background-color: darken($dark-gray, 10%);
+      }
+    }
+  }
   ul {
     padding: 2px;
     font-size: 0.85em;
@@ -46,4 +65,28 @@ ul {
       border-bottom: 1px solid $light-gray;
     }
   }
+}
+
+.icn-new-dir:before {
+  content: '';
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 5px;
+  background-image: url('folder-add.svg');
+  background-size: 16px 14px;
+  background-repeat: none;
+  background-position: bottom center;
+}
+
+.icn-new-rec:before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 5px;
+  background-image: url('recipe-add.svg');
+  background-size: 14px 14px;
+  background-repeat: none;
+  background-position: bottom center;
 }

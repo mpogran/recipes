@@ -1,8 +1,11 @@
 - if current_user
-  .col-container.fill-h.marg-l.white.rd.sdw.pad-sm.split
+  .col-container.marg-l.white.rd.sdw.pad-sm.single-pane{'ng-controller' => "browser"}
     #cur_list.file-container.fill-h
-      = render template: 'containers/show'
+      .actions
+        #new_dir.icn-new-dir.action= 'New Folder'
+        #new_rec.icn-new-rec.action= 'New Recipe'
+      %ul.file{'ng-init' => "dirId=#{@container.id}"}
+        %li{'ng-repeat' => 'item in items', class: "pad-sm {{ item.itemable_type }}"}
+          = "{{ item.itemable_name }}"
     #cur_recipe.fill-h
-- else
-  .centered.col-5.tp-marg-xl.pad-med.l-gray.rd.sdw
-    = render partial: 'shared/login_form'
+      %div{'ng-include' => 'recipeView'}

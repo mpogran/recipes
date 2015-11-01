@@ -8,13 +8,14 @@ header {
       width: 135px;
       margin: 25px auto;
       &.large {
-        width: 275px;
+        width: 90px;
       }
     }
   }
   #controls {
+    @include shift(8);
     @include span-columns(4);
-    padding-top: 35px;
+    padding: 35px 0;
     a {
       margin-right: 10px;
       color: white;
@@ -27,4 +28,4 @@ footer {
 
 }
 
-@include sticky-footer(50px, "#main", "#main_footer", "footer")
+@include sticky-footer($footer-size, "#main", "#main_footer", "footer")

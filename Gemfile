@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'angularjs-rails'
+gem 'angular-ui-router-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bitters'
 gem 'bourbon'

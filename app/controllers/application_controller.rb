@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= session[:user_id] && User.find_by_id(session[:user_id])
   end
+
+  def require_curr
+    unless current_user.present?
+      redirect_to login_path
+    end
+  end
 end

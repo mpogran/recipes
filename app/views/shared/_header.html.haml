@@ -1,8 +1,8 @@
 .col-container
-  #logo-container
-    #logo{class: ('large' if @large_logo)}
-      = link_to dashboard_path do
-        = image_tag 'icon.svg'
+  -# #logo-container
+  -#   #logo{class: ('large' if @large_logo)}
+  -#     = link_to dashboard_path do
+  -#       = image_tag 'icon.svg'
   #controls
     - if current_user
       = link_to 'log out', logout_path, class: 'pill bor-white right'

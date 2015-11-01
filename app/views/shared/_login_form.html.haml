@@ -1,6 +1,5 @@
 = semantic_form_for 'user', url: login_path do |f|
-  .t-white
-    = f.input :email, item_wrapper_class: 'asdfas'
-    = f.input :password
-    = f.submit 'Login'
-    = link_to 'sign up', new_user_path, id: 'signup', class: 'btn alt blue'
+  = f.input :email, item_wrapper_class: 'asdfas'
+  = f.input :password
+  = f.submit 'Login'
+  = link_to 'sign up', new_user_path, id: 'signup', class: 'btn alt blue'

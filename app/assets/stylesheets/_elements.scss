@@ -53,12 +53,13 @@
   padding: 5px 15px;
 }
 
-.split {
-  div:first-child {
+.single-pane {
+  height: calc(100% - 50px);
+  & > div:first-child {
     width: 40%;
     float: left;
   }
-  div:last-child {
+  & > div:last-child {
     @include pad(0 0 0 default);
     width: 60%;
     float: left;

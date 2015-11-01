@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   # Recipe
   resources :recipes
+
+  # Container
+  resources :containers, except: [:new, :edit]
 end
