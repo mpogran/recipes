@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
 
       flash[:success] = "Welcome back #{user.email}!"
-      redirect_to dashboard_path
+      redirect_to home_path
     else
       flash[:error] = 'Unknown username and password.'
       redirect_to login_path

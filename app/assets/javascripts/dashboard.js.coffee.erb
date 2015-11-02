@@ -1,0 +1,42 @@
+window.recipes = angular.module 'recipes', ['ui.router', 'ngResource']
+
+recipes.config ['$resourceProvider', ($resourceProvider) ->
+  $resourceProvider.defaults.stripTrailingSlashes = false
+]
+
+recipes.factory 'Container', ['$resource', ($resource) ->
+  return $resource '/containers/:id', null,
+    'update': { method:'PUT' }
+]
+
+recipes.config ($stateProvider, $urlRouterProvider) ->
+  $stateProvider
+    .state 'root',
+      url: '',
+      views:
+        list:
+          templateUrl: 'assets/browser/list.html',
+          controller: 'BrowserCtrl'
+
+    .state 'recipe-new',
+      views:
+        list:
+          templateUrl: 'assets/browser/list.html',
+          controller: 'BrowserCtrl'
+        preview:
+          templateUrl: 'assets/browser/new_recipe.html',
+          controller: 'BrowserCtrl'
+  return
+
+recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'container',
+  ($scope, $state, Container, container) ->
+    $scope.rootContainer = $scope.container = JSON.parse(container)
+    $scope.items = $scope.container.items
+
+    $scope.newDir = ->
+
+    $scope.newRec = ->
+      $state.go('recipe-new')
+      console.log "hello"
+
+]

@@ -1,0 +1,11 @@
+- if current_user
+  .col-container.marg-l.white.rd.sdw.pad-sm.single-pane{'ng-controller' => "BrowserCtrl"}
+    #cur_list.file-container.fill-h
+      .actions
+        #new_dir.icn-new-dir.action{'ng-click' => 'newDir()'}= 'New Folder'
+        #new_rec.icn-new-rec.action{'ng-click' => 'newRec()'}= 'New Recipe'
+      %div{'ui-view' => 'list'}
+    #cur_recipe.fill-h
+      %div{'ui-view' => 'preview'}
+  :javascript
+    recipes.value("container", '#{render partial: 'containers/container.json.jbuilder', locals: {container: @container}}');

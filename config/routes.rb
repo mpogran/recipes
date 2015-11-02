@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: [:index]
 
-  get '/', to: 'dashboard#index', as: 'dashboard'
+  get '/', to: 'home#index', as: 'home'
 
   # Session
   get '/login', to: 'sessions#new'

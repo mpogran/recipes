@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html {
-          redirect_to dashboard_path
+          redirect_to home_path
         }
       else
         format.html { render :new }

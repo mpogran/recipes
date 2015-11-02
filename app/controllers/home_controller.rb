@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class HomeController < ApplicationController
   before_action :require_curr
   # GET /
   def index
