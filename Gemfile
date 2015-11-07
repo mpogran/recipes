@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'angularjs-rails'
-gem 'angular-ui-router-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bitters'
 gem 'bourbon'
@@ -11,7 +9,6 @@ gem 'formtastic', '~> 3.0'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 gem 'jbuilder', '~> 2.0'
-gem 'jquery-rails'
 gem 'neat'
 gem 'pg'
 gem 'rails', '4.2.4'

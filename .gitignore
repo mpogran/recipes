@@ -4,3 +4,6 @@
 
 # Ignore local asset pipline cache files
 /public/assets
+
+# Ignore bower assets
+/vendor/assets/components

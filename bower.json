@@ -1,0 +1,25 @@
+{
+  "name": "Recipes",
+  "homepage": "https://github.com/mpogran/recipes",
+  "authors": [
+    "Mike Pogran <mpogran@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "jquery-ujs": "~1.1.0"
+  }
+}

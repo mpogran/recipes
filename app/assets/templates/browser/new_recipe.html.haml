@@ -1,4 +1,6 @@
 %h3= "New Recipe"
-%form
-  %label= "Name"
-  %input
+= semantic_form_for 'recipe', url: recipe_path do |f|
+  
+-# %form
+-#   %label= "Name"
+-#   %input
