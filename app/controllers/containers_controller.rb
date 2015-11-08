@@ -1,5 +1,6 @@
 class ContainersController < ApplicationController
   before_action :set_container, only: [:show, :edit, :update, :destroy]
+  before_action :require_curr, only: [:create]
 
   # GET /containers.json
   def index

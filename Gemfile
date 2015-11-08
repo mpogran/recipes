@@ -10,6 +10,7 @@ gem 'haml'
 gem "haml-rails", "~> 0.9"
 gem 'jbuilder', '~> 2.0'
 gem 'neat'
+gem 'ng-rails-csrf'
 gem 'pg'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'

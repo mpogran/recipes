@@ -1,6 +1,30 @@
-%h3= "New Recipe"
-= semantic_form_for 'recipe', url: recipe_path do |f|
-  
--# %form
--#   %label= "Name"
--#   %input
+%form
+  .row
+    .col-3.thumbnail
+      %img{src: 'assets/add_thumb.png'}
+    .col-4.info
+      %label= 'Name'
+      %input{type: 'text', 'ng-model' => 'recipe.name'}
+
+      %input{type: 'text', 'ng-model' => 'recipe.keywords', placeholder: 'Keywords'}
+
+      %label= "Note:"
+      %textarea{'ng-model' => 'recipe.note'}
+
+      %label= "Autor"
+      %input{'ng-model' => 'recipe.author'}
+
+      %label= "Location"
+      %input{'ng-model' => 'recipe.location'}
+  .row
+    %hr
+  .row
+    .col-3
+      %label= "Ingredients"
+      %input{'ng-model' => 'recipe.ingredients'}
+
+    .col-4
+      %label= "Directions"
+      %textarea{'ng-model' => 'recipe.directions'}
+  .row
+    %input{type: 'submit', value: 'Save', 'ng-click' => 'saveRecipe()'}

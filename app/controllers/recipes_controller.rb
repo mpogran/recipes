@@ -25,11 +25,15 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
+
+    container = Container.find_by(id: params[:container_id])
+    item = @recipe.container_items.build(container: container) if container
 
     respond_to do |format|
-      if @recipe.save
+      if @recipe.save && (item.nil? || item.save)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe }
+        format.json { render @recipe }
       else
         format.html { render :new }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
@@ -62,13 +66,19 @@ class RecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params[:recipe]
+      params.require(:recipe).permit(
+        :name,
+        :author,
+        :directions,
+        :note,
+        :keywords,
+        :location,
+        :ingredients
+      )
     end
 end

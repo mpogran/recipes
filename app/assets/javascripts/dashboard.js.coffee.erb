@@ -1,42 +1,66 @@
-window.recipes = angular.module 'recipes', ['ui.router', 'ngResource']
+window.recipes = angular.module 'recipes', ['ui.router', 'ngResource', 'ng-rails-csrf']
 
-recipes.config ['$resourceProvider', ($resourceProvider) ->
+recipes.config ['$resourceProvider', '$locationProvider', ($resourceProvider, $locationProvider) ->
   $resourceProvider.defaults.stripTrailingSlashes = false
+  $locationProvider.html5Mode
+    enabled: true
 ]
 
 recipes.factory 'Container', ['$resource', ($resource) ->
-  return $resource '/containers/:id', null,
+  return $resource '/containers/:id.json', null,
+    'update': { method:'PUT' }
+]
+
+recipes.factory 'Recipe', ['$resource', ($resource) ->
+  return $resource '/recipes/:id.json', null,
     'update': { method:'PUT' }
 ]
 
 recipes.config ($stateProvider, $urlRouterProvider) ->
   $stateProvider
     .state 'root',
-      url: '',
+      url: '/',
+      controller: 'BrowserCtrl'
       views:
         list:
           templateUrl: 'assets/browser/list.html',
-          controller: 'BrowserCtrl'
 
     .state 'recipe-new',
+      controller: 'BrowserCtrl'
       views:
         list:
           templateUrl: 'assets/browser/list.html',
-          controller: 'BrowserCtrl'
         preview:
           templateUrl: 'assets/browser/new_recipe.html',
-          controller: 'BrowserCtrl'
   return
 
-recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'container',
-  ($scope, $state, Container, container) ->
+recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'container',
+  ($scope, $state, Container, Recipe, container) ->
     $scope.rootContainer = $scope.container = JSON.parse(container)
     $scope.items = $scope.container.items
 
-    $scope.newDir = ->
+    $scope.refreshContainer = ->
+      $scope.container = Container
+        .get {id: $scope.container.id},
+          (container) ->
+            $scope.items = $scope.container.items
+            return
+      return
 
-    $scope.newRec = ->
+
+    $scope.newRecipe = ->
+      $scope.recipe = new Recipe()
       $state.go('recipe-new')
-      console.log "hello"
+      return
 
+    $scope.saveRecipe = ->
+      $scope.items = []
+      $scope.recipe
+        .$save {container_id: $scope.container.id},
+          (recipe) ->
+            $scope.recipe = null
+            $scope.refreshContainer()
+            $state.go('root')
+            return
+      return
 ]

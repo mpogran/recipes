@@ -3,9 +3,18 @@
   @include outer-container($max-width);
 }
 
+.row {
+   @include row();
+ }
+
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
     @include span-columns($i);
+    @for $j from 1 through $grid-columns {
+      .col-#{$j} {
+        @include span-columns($j of $i);
+      }
+    }
   }
 }
 
@@ -55,13 +64,4 @@
 
 .single-pane {
   height: calc(100% - 50px);
-  & > div:first-child {
-    width: 40%;
-    float: left;
-  }
-  & > div:last-child {
-    @include pad(0 0 0 default);
-    width: 60%;
-    float: left;
-  }
 }
