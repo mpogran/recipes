@@ -20,18 +20,26 @@ recipes.config ($stateProvider, $urlRouterProvider) ->
   $stateProvider
     .state 'root',
       url: '/',
-      controller: 'BrowserCtrl'
+      controller: 'BrowserCtrl',
       views:
         list:
           templateUrl: 'assets/browser/list.html',
 
-    .state 'recipe-new',
-      controller: 'BrowserCtrl'
+    .state 'recipe-show',
+      controller: 'BrowserCtrl',
       views:
         list:
           templateUrl: 'assets/browser/list.html',
         preview:
-          templateUrl: 'assets/browser/new_recipe.html',
+          templateUrl: 'assets/browser/recipes/show.html'
+
+    .state 'recipe-new',
+      controller: 'BrowserCtrl',
+      views:
+        list:
+          templateUrl: 'assets/browser/list.html',
+        preview:
+          templateUrl: 'assets/browser/recipes/new.html'
   return
 
 recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'container',
@@ -47,6 +55,11 @@ recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'co
             return
       return
 
+    $scope.loadItem = (item) ->
+      if item.itemable_type
+        $scope.recipe = Recipe.get {id: item.itemable_id}
+        $state.go('recipe-show')
+      return
 
     $scope.newRecipe = ->
       $scope.recipe = new Recipe()
@@ -58,7 +71,7 @@ recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'co
       $scope.recipe
         .$save {container_id: $scope.container.id},
           (recipe) ->
-            $scope.recipe = null
+            $scope.recipe = recipe
             $scope.refreshContainer()
             $state.go('root')
             return

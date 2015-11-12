@@ -58,8 +58,8 @@
 
 // Elements
 .pill {
+  @include padding(null 20px null 20px);
   border-radius: 25px;
-  padding: 5px 15px;
 }
 
 .single-pane {

@@ -1,31 +1,40 @@
+@include sticky-footer($footer-size, "#main", "#main_footer", "footer");
+
 header {
   @include outer-container(100%);
+  height: 50px;
+  background: $white;
 
   #logo-container {
-    @include shift(4);
     @include span-columns(4);
-    #logo {
-      width: 135px;
-      margin: 25px auto;
-      &.large {
-        width: 90px;
+    margin-top: 15px;
+    #logo,
+    #text {
+      display: inline-block;
+      margin-right: 10px;
+      img {
+        height: 20px;
       }
     }
   }
   #controls {
-    @include shift(8);
+    @include shift(4);
     @include span-columns(4);
-    padding: 35px 0;
     a {
-      margin-right: 10px;
-      color: white;
-      &:last-child {margin-right: 0;}
+      margin-top: 10px;
+      margin-left: 10px;
+      color: $dark-gray;
+      font-size: em(14);
+      &:last-child {margin-left: 0;}
+      &:not(.pill) {padding: 2px 0;}
     }
   }
+}
+
+section#main {
+  margin-top: 20px;
 }
 
 footer {
 
 }
-
-@include sticky-footer($footer-size, "#main", "#main_footer", "footer")

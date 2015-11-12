@@ -1,8 +1,9 @@
 .col-container
-  -# #logo-container
-  -#   #logo{class: ('large' if @large_logo)}
-  -#     = link_to home_path do
-  -#       = image_tag 'icon.svg'
+  #logo-container
+    #logo= image_tag 'logo.svg'
+    #text= image_tag 'text.svg'
   #controls
     - if current_user
-      = link_to 'log out', logout_path, class: 'pill bor-white right'
+      = link_to 'log out', logout_path, class: 'pill bor-d-gray right'
+    = link_to 'Recipe Book', '#', class: 'right'
+    = link_to 'Shopping List', '#', class: 'right'

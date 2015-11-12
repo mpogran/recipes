@@ -1,0 +1,22 @@
+.row
+  .col-3.thumbnail
+    %img{src: 'assets/add_thumb.png'}
+    %p= 'Author'
+    %p= '{{recipe.author}}'
+
+    %p= 'Location'
+    %p= '{{recipe.location}}'
+  .col-4.info
+    %p= '{{recipe.name}}'
+    %p= '{{recipe.keywords}}'
+
+    %p= 'Note:'
+    %p= '{{recipe.note}}'
+.row
+  %hr
+.row
+  .col-3
+    %p= '{{recipe.ingredients}}'
+
+  .col-4
+    %p= '{{recipe.description}}'

@@ -2,9 +2,22 @@
 // http://bitters.bourbon.io
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
-@import url(https://fonts.googleapis.com/css?family=Vollkorn);
+
+// Import Aileron font from assets
+@include font-face("Aileron", font-url('Aileron-Thin'), 100);
+@include font-face("Aileron", font-url('Aileron-ThinItalic'), 100, italic);
+@include font-face("Aileron", font-url('Aileron-Light'), 300);
+@include font-face("Aileron", font-url('Aileron-LightItalic'), 300, italic);
+@include font-face("Aileron", font-url('Aileron-Regular'), 400);
+@include font-face("Aileron", font-url('Aileron-Italic'), 400, italic);
+@include font-face("Aileron", font-url('Aileron-SemiBold'), 500);
+@include font-face("Aileron", font-url('Aileron-SemiBoldItalic'), 500, italic);
+@include font-face("Aileron", font-url('Aileron-Bold'), 700);
+@include font-face("Aileron", font-url('Aileron-BoldItalic'), 700, italic);
+
 
 @import "variables";
+@import "utilities";
 @import "grid-settings";
 @import "buttons";
 @import "forms";
@@ -12,28 +25,9 @@
 @import "tables";
 @import "typography";
 
-@mixin sticky-footer($footer-height, $root-selector: unquote("#root"), $root-footer-selector: unquote("#root_footer"), $footer-selector: unquote("#footer")) {
-  html, body {
-    height: 100%;
-  }
-  #{$root-selector} {
-    clear: both;
-    min-height: 100%;
-    height: 100%;
-    margin-bottom: -$footer-height;
-    #{$root-footer-selector} {
-      height: $footer-height;
-    }
-  }
-  #{$footer-selector} {
-    clear: both;
-    position: relative;
-    height: $footer-height;
-  }
-}
 
 body {
   margin: 0;
   padding: 0;
-  background: url('blur1.jpg');
+  background: url('back.jpg');
 }

@@ -2,6 +2,11 @@
   .row
     .col-3.thumbnail
       %img{src: 'assets/add_thumb.png'}
+      %label= "Autor"
+      %input{'ng-model' => 'recipe.author'}
+
+      %label= "Location"
+      %input{'ng-model' => 'recipe.location'}
     .col-4.info
       %label= 'Name'
       %input{type: 'text', 'ng-model' => 'recipe.name'}
@@ -10,12 +15,6 @@
 
       %label= "Note:"
       %textarea{'ng-model' => 'recipe.note'}
-
-      %label= "Autor"
-      %input{'ng-model' => 'recipe.author'}
-
-      %label= "Location"
-      %input{'ng-model' => 'recipe.location'}
   .row
     %hr
   .row
