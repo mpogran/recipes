@@ -92,3 +92,37 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+.recipe {
+
+  .clean {
+    @include padding(0 0 5px 0);
+    background: tint($medium-gray, 80%);
+    border: 1px solid transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 5px;
+
+    @include placeholder {
+      color: tint($medium-gray, 25%);
+    }
+
+    &:hover {
+      border-color: tint($medium-gray, 55%);
+    }
+
+    &:focus {
+      box-shadow: none;
+      border-color: $medium-gray;
+    }
+  }
+
+  select.clean {
+    height: 32px;
+  }
+
+  .name {
+    font-size: 28px;
+    font-weight: bold;
+  }
+}

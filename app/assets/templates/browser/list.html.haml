@@ -1,4 +1,5 @@
 %h2= '{{ container.name }}'
-%ul.file
-  %li{'ng-repeat' => 'item in items', class: 'pad-sm {{ item.itemable_type }}', 'ng-click' => 'loadItem(item)'}
+%ul.file.tp-marg-sm
+  %li{'ng-repeat' => 'item in items', class: 'pad-sm {{ item.itemable_type }} {{ item.state }}', 'ng-click' => 'loadItem(item)'}
     = "{{ item.itemable_name }}"
+    %span.t-sm.half-o= "{{ item.desc }}"

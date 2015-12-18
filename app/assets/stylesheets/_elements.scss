@@ -37,11 +37,11 @@
   .pad-#{$size_class} {padding: $size_val;}
   .marg-#{$size_class} {margin: $size_val;}
 
-  .vert-pad-#{$size_class} {padding-top: $size_val; padding-bottom: $size_val;}
-  .vert-marg-#{$size_class} {margin-top: $size_val; margin-bottom: $size_val;}
+  .v-pad-#{$size_class} {padding-top: $size_val; padding-bottom: $size_val;}
+  .v-marg-#{$size_class} {margin-top: $size_val; margin-bottom: $size_val;}
 
-  .hor-pad-#{$size_class} {padding-left: $size_val; padding-right: $size_val;}
-  .hor-marg-#{$size_class} {margin-left: $size_val; margin-right: $size_val;}
+  .h-pad-#{$size_class} {padding-left: $size_val; padding-right: $size_val;}
+  .h-marg-#{$size_class} {margin-left: $size_val; margin-right: $size_val;}
 
   @each $dir_class, $dir_atr in $directions {
     .#{$dir_class}-pad-#{$size_class} {
@@ -55,6 +55,14 @@
 
 .fill-h {height: 100%;}
 .fill-w {height: 100%;}
+
+.in {
+  display: inline;
+}
+
+.in-block {
+  display: inline-block;
+}
 
 // Elements
 .pill {

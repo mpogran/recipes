@@ -30,10 +30,13 @@ class Recipe < ActiveRecord::Base
       [:edition, :page]
     when :magazine
       [:issue, :page]
+    when :other
+      [:value]
     end
 
     if keys.all? {|k| hash.key?(k)}
       self.location = {type: type.to_s, location: hash }
+      self.save
     else
       raise ArgumentError.new('Invalid location for provided type.')
     end
@@ -42,10 +45,6 @@ class Recipe < ActiveRecord::Base
   private
   def initialize_ingredients
     self.ingredients ||= []
-  end
-
-  def location
-    super
   end
 
   def location=(val)

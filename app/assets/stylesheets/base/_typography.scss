@@ -13,10 +13,9 @@ h4,
 h5,
 h6 {
   font-family: $heading-font-family;
-  font-size: $base-font-size;
-  color: $light-gray;
+  color: $dark-gray;
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+  margin: 0;
 }
 
 p {
@@ -24,14 +23,13 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $link-color;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    text-decoration: underline;
   }
 }
 
@@ -47,4 +45,36 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.t-xs {
+  font-size: .8em;
+}
+.t-sm {
+  font-size: .9em;
+}
+.t-l {
+  font-size: 1.1em;
+}
+.t-xl {
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 38px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 14px;
 }

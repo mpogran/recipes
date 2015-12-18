@@ -4,16 +4,16 @@
 // MIT License
 
 // Import Aileron font from assets
-@include font-face("Aileron", font-url('Aileron-Thin'), 100);
-@include font-face("Aileron", font-url('Aileron-ThinItalic'), 100, italic);
-@include font-face("Aileron", font-url('Aileron-Light'), 300);
-@include font-face("Aileron", font-url('Aileron-LightItalic'), 300, italic);
-@include font-face("Aileron", font-url('Aileron-Regular'), 400);
-@include font-face("Aileron", font-url('Aileron-Italic'), 400, italic);
-@include font-face("Aileron", font-url('Aileron-SemiBold'), 500);
-@include font-face("Aileron", font-url('Aileron-SemiBoldItalic'), 500, italic);
-@include font-face("Aileron", font-url('Aileron-Bold'), 700);
-@include font-face("Aileron", font-url('Aileron-BoldItalic'), 700, italic);
+@include font-face("Aileron", 'aileron/Aileron-Thin', 100, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-ThinItalic', 100, italic, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-Light', 300, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-LightItalic', 300, italic, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-Regular', 400, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-Italic', 400, italic, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-SemiBold', 500, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-SemiBoldItalic', 500, italic, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-Bold', 700, $asset-pipeline: true, $file-formats: eot);
+@include font-face("Aileron", 'aileron/Aileron-BoldItalic', 700, italic, $asset-pipeline: true, $file-formats: eot);
 
 
 @import "variables";
@@ -24,15 +24,32 @@
 @import "lists";
 @import "tables";
 @import "typography";
+@import "icons";
 
 
 body {
   margin: 0;
   padding: 0;
-  background: image-url('back.jpg') no-repeat center center;
-  background-size: cover;
+  background: black;
+
+  &:before {
+    @include filter(blur(5px));
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background: image-url('back.jpg') no-repeat center center;
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+  }
 
   &#login {
-    @include linear-gradient($blue, $green);
+    @include linear-gradient($blue, darken($blue, 10%));
+    &:before {
+      content: none;
+    }
   }
 }

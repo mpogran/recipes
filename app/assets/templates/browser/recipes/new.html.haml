@@ -1,29 +1,24 @@
-%form
+%form.recipe
   .row
-    .col-3.thumbnail
-      %img{src: 'assets/add_thumb.png'}
-      %label= "Autor"
-      %input{'ng-model' => 'recipe.author'}
-
-      %label= "Location"
-      %input{'ng-model' => 'recipe.location'}
-    .col-4.info
-      %label= 'Name'
-      %input{type: 'text', 'ng-model' => 'recipe.name'}
-
-      %input{type: 'text', 'ng-model' => 'recipe.keywords', placeholder: 'Keywords'}
-
-      %label= "Note:"
-      %textarea{'ng-model' => 'recipe.note'}
+    %input.clean.name{type: 'text', placeholder: 'Recipe Title', ng: ng_exp(model: 'recipe.name')}
+  .row.tp-marg-sm
+    %input.clean{type: 'text', placeholder: 'keywords, tags, etc', ng: ng_exp(model: 'recipe.keywords')}
+  .row.tp-marg-med
+    %select.clean{ng: ng_exp(model: 'recipe.location.type')}
+      %option{value: ''}= 'select recipe location'
+      %option{value: :website}= 'website'
+      %option{value: :book}= 'book'
+      %option{value: :magazine}= 'magazine'
+      %option{value: :other}= 'other'
+    %input.clean{type: 'text', placeholder: 'Author', ng: ng_exp(model: 'recipe.author')}
+  .row.tp-marg-med
+    %h5.t-m-gray.btm-marg-sm= 'Notes'
+    %textarea.clean.t-xs{placeholder: 'Write all your comments and secret tricks here...', ng: ng_exp(model: 'recipe.note')}
+  .row.tp-marg-med
+    .col-2
+      %h5.t-m-gray.btm-marg-sm= 'Ingredients'
+    .col-6
+      %h5.t-m-gray.btm-marg-sm= 'Directions'
+      %textarea.clean.t-xs{placeholder: 'Combine ingredients to make sweet deliciousness', rows: 10, ng: ng_exp(model: 'recipe.directions')}
   .row
-    %hr
-  .row
-    .col-3
-      %label= "Ingredients"
-      %input{'ng-model' => 'recipe.ingredients'}
-
-    .col-4
-      %label= "Directions"
-      %textarea{'ng-model' => 'recipe.directions'}
-  .row
-    %input{type: 'submit', value: 'Save', 'ng-click' => 'saveRecipe()'}
+    %input{type: 'submit', value: 'Save', ng: ng_exp(click: 'saveRecipe()')}

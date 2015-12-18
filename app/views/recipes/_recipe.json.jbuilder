@@ -5,4 +5,6 @@ json.directions recipe.directions
 json.note recipe.note
 json.keywords recipe.keywords
 json.ingredients recipe.ingredients
+json.location recipe.location
+json.date recipe.created_at
 json.is_private recipe.is_private

@@ -1,5 +1,23 @@
 window.recipes = angular.module 'recipes', ['ui.router', 'ngResource', 'ng-rails-csrf']
 
+recipes.filter 'location', ['$sce', ($sce) ->
+  return (input) ->
+    if input.type == 'website'
+      urlMatch = /w{3}.([^\/]*)/g
+      match = urlMatch.exec(input.location.url)
+      url = match[0]
+      return $sce.trustAsHtml("<a href=#{input.location.url}>#{url}</a>")
+    else if input.type == 'book'
+      return "#{input.location.page}, #{input.location.edition} edition"
+    else
+      return "#{input.location.page}, #{input.location.issue} edition"
+]
+
+recipes.filter 'html', ['$sce', ($sce) ->
+  return (input) ->
+    return $sce.trustAsHtml(input)
+]
+
 recipes.config ['$resourceProvider', '$locationProvider', ($resourceProvider, $locationProvider) ->
   $resourceProvider.defaults.stripTrailingSlashes = false
   $locationProvider.html5Mode
@@ -44,6 +62,7 @@ recipes.config ($stateProvider, $urlRouterProvider) ->
 
 recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'container',
   ($scope, $state, Container, Recipe, container) ->
+    $scope.locations = ['website', 'book', 'magazine', 'other']
     $scope.rootContainer = $scope.container = JSON.parse(container)
     $scope.items = $scope.container.items
 
@@ -56,8 +75,12 @@ recipes.controller 'BrowserCtrl', ['$scope','$state', 'Container', 'Recipe', 'co
       return
 
     $scope.loadItem = (item) ->
-      if item.itemable_type
+      if item.itemable_type == 'recipe'
         $scope.recipe = Recipe.get {id: item.itemable_id}
+        for list_item in $scope.items
+          list_item.state = null
+        item.state = 'cur'
+
         $state.go('recipe-show')
       return
 

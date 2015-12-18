@@ -1,22 +1,26 @@
 .row
-  .col-3.thumbnail
-    %img{src: 'assets/add_thumb.png'}
-    %p= 'Author'
-    %p= '{{recipe.author}}'
-
-    %p= 'Location'
-    %p= '{{recipe.location}}'
-  .col-4.info
-    %p= '{{recipe.name}}'
-    %p= '{{recipe.keywords}}'
-
-    %p= 'Note:'
-    %p= '{{recipe.note}}'
+  .col-6
+    %h3= '{{recipe.name}}'
+  .col-1
+    .icon.image.in-block.right.lt-marg-sm.pnt
+    .icon.expand.in-block.right.pnt
+  .col-1
+    %h5.t-m-gray.right= '{{ recipe.date | date:"MM/dd/yy" }}'
 .row
-  %hr
+  %p.t-m-gray= '{{recipe.keywords.join(", ")}}'
 .row
-  .col-3
-    %p= '{{recipe.ingredients}}'
-
-  .col-4
-    %p= '{{recipe.description}}'
+  %p.t-xs
+    %span{ng: ng_exp(bind_html: 'recipe.location | location')}
+    = '| {{recipe.author}}'
+.row
+  %h5.t-m-gray= 'Notes'
+  %p.t-xs= '{{recipe.note}}'
+.row.tp-marg-med
+  .col-2
+    %h5.t-m-gray= 'Ingredients'
+    %ul.tp-marg-sm.t-xs
+      %li{ng: ng_exp(repeat: 'ingredient in recipe.ingredients')}
+        = '{{ ingredient.quantity }} {{ ingredient.modifier }} {{ ingredient.name }}'
+  .col-6
+    %h5.t-m-gray= 'Directions'
+    %p.tp-marg-sm.t-xs{ng: ng_exp(bind_html: 'recipe.directions | html')}

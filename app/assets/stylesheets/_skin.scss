@@ -5,13 +5,32 @@
     &.half-a {background-color: transparentize($color, .75);}
   }
   // Bordered
-  .bor-#{$color_class} {border: 2px solid $color;}
+  .bor-#{$color_class} {border: 1px solid $color;}
+
+  //Text
+  .t-#{$color_class} {
+    color: $color;
+  }
 }
 
 // Rounded
-.rd {border-radius: $base-border-radius;}
+.rd {
+  border-radius: $base-border-radius;
+}
 // Shadowed
-.sdw {box-shadow: 0 0 6px $dark-gray;}
+.sdw {
+  box-shadow: 0 0 6px $dark-gray;
+}
+
+// Opacity
+.half-o {
+  opacity: .5;
+}
+
+// Cursor
+.pnt {
+  cursor: pointer;
+}
 
 // ul skin
 ul {
@@ -26,13 +45,6 @@ ul {
         color: $white;
       }
     }
-  }
-}
-
-// Color types
-@each $color_class, $color in $colors {
-  .t-#{$color_class} {
-    color: $color;
   }
 }
 
@@ -95,35 +107,35 @@ ul {
   ul {
     padding: 2px;
     font-size: 0.85em;
-    li.cur {
-      background: $medium-green;
-    }
-    li:hover {
-      background: $medium-green;
+    li {
+      &.cur {
+        background: $medium-green;
+        color: white;
+      }
+      &:hover {
+        background: $medium-green;
+        color: white;
+      }
+      &.recipe {
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          background: image-url('star_open.svg') no-repeat;
+          width: 11px;
+          height: 10px;
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          margin-top: -5px;
+        }
+        &:hover,
+        &.cur {
+          &:after {
+            background-image: image-url('star_open_white.svg');
+          }
+        }
+      }
     }
   }
-}
-
-.icn-new-dir:before {
-  content: '';
-  width: 16px;
-  height: 14px;
-  display: inline-block;
-  margin-right: 5px;
-  background-image: url('folder-add.svg');
-  background-size: 16px 14px;
-  background-repeat: none;
-  background-position: bottom center;
-}
-
-.icn-new-rec:before {
-  content: '';
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  margin-right: 5px;
-  background-image: url('recipe-add.svg');
-  background-size: 14px 14px;
-  background-repeat: none;
-  background-position: bottom center;
 }

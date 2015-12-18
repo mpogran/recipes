@@ -1,0 +1,16 @@
+.icon {
+  &:before {
+    display: block;
+    content: '';
+    height: 18px;
+    width: 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.expand:before {
+    background-image: image-url('expand.svg');
+  }
+  &.image:before {
+    background-image: image-url('image.svg');
+  }
+}
